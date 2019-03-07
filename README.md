@@ -1,27 +1,34 @@
 # AppBlog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
+# Créez une application de type blog
 
-## Development server
+Vous allez créer une application simple de type blog.  Cette application va afficher les posts du blog, et chaque post aura un bouton permettant de "love it" ou de "don't love it".  Chaque post aura la forme suivante : 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+post: {
+  title: string,
+  content: string,
+  loveIts: number,
+  created_at: Date
+} 
 
-## Code scaffolding
+Quand un post a plus de "love it" que de "don't love it" (loveIts > 0), il sera coloré en vert, et inversement quand loveIts < 0, il sera coloré en rouge.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ Information : je vous conseille d'utiliser Bootstrap pour cet exercice.  Si vous créez des list-group-item dans un list-group, vous avez les classes list-group-item-success et list-group-item-danger pour colorer les item.
 
-## Build
+ En termes de structure :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+votre AppComponent contiendra l'array des posts, et il le passera à un component PostListComponent
+votre PostListComponent affichera un PostListItemComponent pour chaque post dans l'array qu'il a reçu
+chaque PostListItemComponent affichera le titre, le contenu et la date de création du post dans le template
+les PostListItemComponent auront des boutons qui permettent d'augmenter et de diminuer le nombre de loveIts — cette modification aura uniquement un effet sur le component, et n'a pas besoin d'être remontée au component parent
 
-## Running unit tests
+Bonus : créez un type pour les post, appelé Post, afin de rendre votre code plus lisible.  Vous pouvez même y intégrer un constructeur qui attribue automatiquement la date !
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Quelques astuces : 
+Pensez aux différents types de databinding — comment passer des données d'un component à un autre, comment afficher des données dans le template et comment réagir à un événement venant du template
+Pensez aux directives structurelles comme *ngFor, et également aux directives par attribut comme ngClass
+Pensez aux Pipes pour la transformation de données, notamment pour la date
 
-## Running end-to-end tests
+# pour tester ce code : 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+npm install 
