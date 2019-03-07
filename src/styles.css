@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.glyph-icon-red {
+    height: 2rem;
+    display: inline-block;
+    margin:0.25rem;
+ }
+
+ .glyph-icon-green {
+    height: 2.2rem;
+    display: inline-block;
+    margin:0.25rem;
+ }

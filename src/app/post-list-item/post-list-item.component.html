@@ -1,0 +1,25 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': classGreen,
+                'list-group-item-danger': classRed }">
+<div class="row">
+    <div class="col-sm-6">
+        <h3 class="pull-left">{{ post.title }}</h3>
+    </div>
+    <div class="col-sm-6">
+        <h4 class="pull-right">
+        <small>{{ post.created_at | date:'short' }}</small>
+        </h4>
+    </div>
+</div>
+<div class="panel-body">
+  {{ post.content }}
+</div>
+<div>
+
+  {{ post.loveIts }} 
+  <img (click)="LoverIT()" class="glyph-icon-green" src="./assets/like.png" />
+  <img (click)="dontLove()" class="glyph-icon-red" src="./assets/dislike.png" />
+
+</div>
+
+</li>
